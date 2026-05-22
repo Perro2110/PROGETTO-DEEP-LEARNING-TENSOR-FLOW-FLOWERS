@@ -10,6 +10,13 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
+# UPDATE VENV
+
+```
+pip freeze > requirements.txt
+```
+
+
 ## FLOWER PROPAGANDA!!!
 Ecco per te un bel bouquet di emoji di fiori, DIVA! 🌸🌼🌻🌺🌷🌹💐🥀
 
