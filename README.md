@@ -2,9 +2,13 @@
 Progetto deep learning 
 
 # VENV SETUP
+```
 python3 -m venv venv
+
 source venv/bin/activate
+
 pip install -r requirements.txt
+```
 
 ## FLOWER PROPAGANDA!!!
 Ecco per te un bel bouquet di emoji di fiori, DIVA! 🌸🌼🌻🌺🌷🌹💐🥀
