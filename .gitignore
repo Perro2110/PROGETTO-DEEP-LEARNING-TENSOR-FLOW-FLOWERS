@@ -1,3 +1,5 @@
 venv/
 datasets/
 flower_photos/
+
+*.tgz
