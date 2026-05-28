@@ -1,0 +1,49 @@
+model.add(tf.keras.layers.Rescaling(1./255))
+model.add(Conv2D(32, 5, activation='relu'),)
+model.add(MaxPooling2D())
+model.add(Conv2D(32, 5, activation='relu'),)
+model.add(MaxPooling2D())
+model.add(Conv2D(32, 5, activation='relu'),)
+model.add(MaxPooling2D())
+model.add(Flatten())
+model.add(Dense(128, activation='relu'))
+model.add(Dense(5))
+
+model.compile(
+    optimizer='adamw',
+    loss=tf.losses.SparseCategoricalCrossentropy(from_logits=True),
+    metrics=['accuracy'])
+
+# accuracy: 0.9520 - loss: 0.1431 - val_accuracy: 0.6281 - val_loss: 2.0790
+
+# questo è uguale ma con adamw come optimizer
+accuracy: 0.9799 - loss: 0.0694 - val_accuracy: 0.6471 - val_loss: 1.9569
+
+
+model.add(tf.keras.layers.Rescaling(1./255))
+
+model.add(Conv2D(32, 5, activation='relu'))
+model.add(BatchNormalization())
+model.add(MaxPooling2D())
+
+model.add(Conv2D(64, 3, activation='relu'))
+model.add(BatchNormalization())
+model.add(MaxPooling2D())
+
+model.add(Conv2D(128, 3, activation='relu'))
+model.add(BatchNormalization())
+model.add(MaxPooling2D())
+
+model.add(Conv2D(256, 3, activation='relu'))
+model.add(BatchNormalization())
+model.add(GlobalAveragePooling2D())
+
+model.add(Dense(256, activation='relu'))
+model.add(Dropout(0.5))
+model.add(Dense(5))
+
+model.compile(
+    optimizer='adamw',
+    loss=tf.losses.SparseCategoricalCrossentropy(from_logits=True),
+    metrics=['accuracy'])
+accuracy: 0.8416 - loss: 0.4318 - val_accuracy: 0.7507 - val_loss: 0.6647
